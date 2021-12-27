@@ -1,0 +1,7 @@
+        ArgumentCaptor<Entity> argument = ArgumentCaptor.forClass(Entity.class);
+        verify(repository).save(argument.capture());
+        assertTrue(argument.getValue().getStatus());
+        assertEquals("MeterId", argument.getValue().getMeterId());
+        assertEquals("RegisterId", argument.getValue().getRegisterId());
+        assertEquals("asd", argument.getValue().getCreatedBy());
+        assertEquals("asd", argument.getValue().getUpdatedBy());
